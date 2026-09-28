@@ -102,10 +102,11 @@ def verify_faces(request: VerifyRequest):
         logger.info("Iniciando verificação no DeepFace.verify()... aguarde.")
         start_time = time.time()
         
-        # 2. Executar verificação com DeepFace
+        # 2. Executar verificação com DeepFace (Usando o modelo mais rigoroso e moderno)
         result = DeepFace.verify(
             img1_path=img1, 
-            img2_path=img2, 
+            img2_path=img2,
+            model_name="Facenet512",
             enforce_detection=False
         )
         
